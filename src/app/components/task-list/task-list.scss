@@ -1,3 +1,12 @@
+.task-list-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
 .add-task-card {
   margin-bottom: 20px;
 }

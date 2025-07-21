@@ -1,18 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TaskItem } from '../../components/task-item/task-item';
-import { CommonModule } from '@angular/common';
 import { TaskModel } from '../../shared/models/task-model';
-import { TaskApi } from '../../shared/services/task-api';
+import { TaskApi } from '../../shared/services/task-service';
 
 @Component({
   selector: 'app-details',
-  imports: [
-    CommonModule,
-    TaskItem
-  ],
   templateUrl: './details.html',
-  styleUrl: './details.scss'
+  styleUrl: './details.scss',
+  standalone: false,
 })
 export class Details {
   private route = inject(ActivatedRoute);

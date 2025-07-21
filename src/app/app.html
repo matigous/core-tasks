@@ -1,6 +1,9 @@
 <div class="app-container">
-  <mat-toolbar class="app-header">
-    <span>📝 {{ title() }}</span>
+  <mat-toolbar class="app-header" color="primary">
+    <span class="app-title">📝 {{ title() }}</span>
+    <mat-slide-toggle class="dark-mode-toggle" (change)="toggleDarkMode()" [checked]="darkMode()">
+      Modo Escuro
+    </mat-slide-toggle>
   </mat-toolbar>
 
   <div class="content">

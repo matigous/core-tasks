@@ -1,18 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { TaskApi } from '../../shared/services/task-api';
+import { TaskApi } from '../../shared/services/task-service';
 import { TaskModel } from '../../shared/models/task-model';
 import { Subject, takeUntil } from 'rxjs';
-import { TaskList } from '../../components/task-list/task-list';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  imports: [
-    CommonModule,
-    TaskList
-  ],
+  selector: 'app-list',
   templateUrl: './list.html',
-  styleUrl: './list.scss'
+  styleUrl: './list.scss',
+  standalone: false,
 })
 export class List {
   private taskApi = inject(TaskApi);

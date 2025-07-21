@@ -1,4 +1,4 @@
-const API_KEY = '9d7776d15d534708b2be7d572ca6b849';
+const API_KEY = undefined;
 
 export const environment = {
   production: false,

@@ -1,20 +1,13 @@
 import { Component } from '@angular/core';
-import { TaskApi } from '../../shared/services/task-api';
+import { TaskApi } from '../../shared/services/task-service';
 import { TaskModel } from '../../shared/models/task-model';
 import { Subject, takeUntil } from 'rxjs';
-import { AddTask } from '../../components/add-task/add-task';
-import { TaskList } from '../../components/task-list/task-list';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [
-    CommonModule,
-    AddTask,
-    TaskList
-  ],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrl: './home.scss',
+  standalone: false,
 })
 export class Home {
   tasks: TaskModel[] = [];
