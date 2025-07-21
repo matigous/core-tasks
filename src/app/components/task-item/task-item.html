@@ -1,0 +1,18 @@
+<mat-list-item class="task-item" [class.completed]="task.completed">
+  <div matListItemIcon class="task-checkbox">
+    <mat-checkbox [checked]="task.completed" (change)="onToggleComplete()" color="primary">
+    </mat-checkbox>
+  </div>
+
+  <div class="task-content">
+    <span class="task-content-title" [class.line-through]="task.completed">{{ task.title }}</span>
+    <span class="task-content-description">{{ task.description }}</span>
+    <small class="task-content-date">{{ task.createdAt | date:'short' }}</small>
+  </div>
+
+  <div matListItemMeta>
+    <button mat-icon-button [color]="task.completed ? 'primary' : 'warn'" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-list-item>

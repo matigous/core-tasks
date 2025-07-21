@@ -1,0 +1,37 @@
+<mat-card class="add-task-card">
+  <mat-card-header>
+    <mat-card-title>Adicionar Nova Tarefa</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="add-task-content">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Título da Tarefa</mat-label>
+        <input matInput formControlName="title" placeholder="Ex: Estudar Angular..." [class.invalid]="isTitleInvalid">
+
+        <mat-error *ngIf="isTitleInvalid">
+          {{ taskForm.get('title')?.errors?.['required'] ?
+          'Título é obrigatório' :
+          'Título deve ter pelo menos 3 caracteres' }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Descrição da Tarefa</mat-label>
+        <textarea matInput formControlName="description" placeholder="Ex: Revisar conceitos de RxJS..."
+          [class.invalid]="isDescriptionInvalid"></textarea>
+
+        <mat-error *ngIf="isDescriptionInvalid">
+          {{ taskForm.get('description')?.errors?.['required'] ?
+          'Descrição é obrigatória' :
+          'Descrição deve ter pelo menos 5 caracteres' }}
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+        <mat-icon>add</mat-icon>
+        Adicionar Tarefa
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

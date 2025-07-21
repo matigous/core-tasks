@@ -1,0 +1,23 @@
+.add-task-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.add-task-content {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.invalid {
+  border-color: #f44336 !important;
+}
+
+.full-width {
+  width: 100%;
+}

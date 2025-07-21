@@ -1,0 +1,33 @@
+<mat-card class="task-list-card">
+  <mat-card-header>
+    <mat-card-title>
+      Minhas Tarefas ({{ completedTasks }}/{{ totalTasks }})
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="stats-chips">
+      <mat-chip-set>
+        <mat-chip [color]="totalTasks > 0 ? 'primary' : 'basic'">
+          Total: {{ totalTasks }}
+        </mat-chip>
+        <mat-chip [color]="completedTasks > 0 ? 'accent' : 'basic'">
+          Concluídas: {{ completedTasks }}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+
+    <mat-list class="task-list" *ngIf="tasks.length > 0; else emptyState">
+      <app-task-item *ngFor="let task of tasks;" [task]="task" (taskToggled)="onTaskToggled($event)"
+        (taskDeleted)="onTaskDeleted($event)">
+      </app-task-item>
+    </mat-list>
+
+    <ng-template #emptyState>
+      <div class="empty-state">
+        <mat-icon>assignment</mat-icon>
+        <p>Nenhuma tarefa encontrada. Que tal adicionar a primeira?</p>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

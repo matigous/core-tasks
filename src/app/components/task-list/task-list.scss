@@ -1,0 +1,42 @@
+.add-task-card {
+  margin-bottom: 20px;
+}
+
+.stats-chips {
+  margin-bottom: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--card-padding);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  gap: 16px;
+
+  .mat-list-item {
+    transition: background-color 0.2s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

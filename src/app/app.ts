@@ -1,12 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  imports: [
+    RouterOutlet,
+    MatToolbarModule
+  ]
 })
 export class App {
-  protected readonly title = signal('core-tasks');
+  protected readonly title = signal('Gerenciador de Tarefas');
 }
