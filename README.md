@@ -1,59 +1,156 @@
-# CoreTasks
+# 📝 CoreTasks
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+A modern to-do list application developed in Angular 20, demonstrating the framework's fundamental concepts through an elegant interface with Material Design and full CRUD functionalities.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+### Core Features
+
+  - ✅ **Add Tasks**: Input field with validation to create new tasks.
+  - 👀 **View Tasks**: Dynamic list with detailed information for each task.
+  - ✏️ **Mark as Completed**: Toggle to switch completion status.
+  - 🗑️ **Remove Tasks**: Individual deletion of tasks.
+  - 📊 **Dynamic Counters**: Real-time statistics (total/completed).
+
+### Extra Features
+
+  - 🌙 **Dark/Light Mode**: Toggle to switch between themes with persistence.
+  - 💾 **Data Persistence**: Integration with CrudCrud API for storage.
+  - 🎨 **Material Design**: Modern and responsive interface.
+  - ⚡ **Reactivity**: Real-time updates without a page reload.
+  - 🔄 **Animations**: Smooth transitions between states.
+
+## 🛠️ Technologies Used
+
+### Core
+
+  - **Angular 20**: Main framework.
+  - **TypeScript**: Development language.
+  - **Angular Material**: UI component library.
+  - **RxJS**: Reactive programming.
+  - **SCSS**: CSS pre-processor.
+
+### APIs and Tools
+
+  - **CrudCrud API**: Backend-as-a-Service for persistence.
+  - **Angular Reactive Forms**: Reactive forms with validation.
+  - **Angular Router**: Routing system (prepared for expansion).
+  - **Angular CLI**: Development tool.
+
+## 🏗️ Architecture and Concepts Demonstrated
+
+### Fundamental Angular Concepts
+
+| Concept | Implementation | Description |
+|---|---|---|
+| **@Input** | `TaskList`, `TaskItem` | Passing data from parent to child component. |
+| **@Output** | All child components | Emitting events from child to parent. |
+| **Interpolation** | `{{ task.title }}`, `{{ totalTasks }}` | Dynamic display of data in the template. |
+| **Property Binding** | `[checked]="task.completed"` | Binding of HTML/Angular properties. |
+| **Event Binding** | `(click)="onDelete()"` | Capturing user events. |
+
+## 🚦 How to Run
+
+### Prerequisites
+
+  - Node.js (v18+)
+  - npm or yarn
+  - Angular CLI (`npm install -g @angular/cli`)
+
+### Installation and Configuration
+
+1.  **Clone the repository**
+
+<!-- end list -->
+
+```bash
+git clone <repository-url>
+cd todo-app
+```
+
+2.  **Install dependencies**
+
+<!-- end list -->
+
+```bash
+npm install
+```
+
+3.  **Configure the API**
+
+<!-- end list -->
+
+  - Go to [CrudCrud.com](https://crudcrud.com)
+  - Copy your unique API key.
+  - Replace `your-api-key` in `src/app/services/task.service.ts`:
+
+<!-- end list -->
+
+```typescript
+private apiUrl = 'https://crudcrud.com/api/YOUR_API_KEY_HERE/tasks';
+```
+
+4.  **Run the application**
+
+<!-- end list -->
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+5.  **Access in the browser**
 
-## Code scaffolding
+<!-- end list -->
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🎯 Use Cases
 
-```bash
-ng generate --help
-```
+### User Adds a Task
 
-## Building
+1.  The user types in the "Task Title" field.
+2.  Form validation occurs in real-time.
+3.  The user clicks "Add Task".
+4.  `AddTask` emits an event via @Output.
+5.  `App` receives it and calls `TaskService.addTask()`.
+6.  The API persists the data and returns a response.
+7.  The list updates automatically via an Observable.
 
-To build the project run:
+## 🧪 Testing Concepts (Preparation)
 
-```bash
-ng build
-```
+The structure is ready for testing:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+  - **@Input/@Output Communication**: Verify that data flows correctly.
+  - **Reactive Forms**: Validate form behavior.
+  - **Services**: Test HTTP calls and business logic.
+  - **Theme Service**: Check persistence and theme application.
 
-## Running unit tests
+## 🎓 Educational Objectives
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+This project was developed to demonstrate:
 
-```bash
-ng test
-```
+1.  **Component Communication**: How data flows in an Angular application.
+2.  **Reactive Programming**: Use of Observables and BehaviorSubject.
+3.  **Material Design**: Implementation of modern UI/UX.
+4.  **Form Handling**: Reactive forms with validation.
+5.  **State Management**: Managing state without external libraries.
+6.  **HTTP Client**: Integration with REST APIs.
+7.  **Theming**: A dynamic theme system.
 
-## Running end-to-end tests
+## 📚 Resources Used
 
-For end-to-end (e2e) testing, run:
+  - [Angular Documentation](https://angular.io/docs)
+  - [Angular Material](https://material.angular.io/)
+  - [CrudCrud API](https://crudcrud.com/)
+  - [RxJS Documentation](https://rxjs.dev/)
+  - [Material Design Guidelines](https://material.io/design)
 
-```bash
-ng e2e
-```
+## 📄 License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This project is under the MIT license. Feel free to use it as a study base or expand it with new functionalities.
 
-## Additional Resources
+-----
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Developed by Matheus Vilela Diniz Maia to demonstrate the fundamental concepts of Angular**
