@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 
-@include mat.theme((color: (primary: mat.$blue-palette,
+@include mat.theme((color: (primary: mat.$azure-palette,
       tertiary: mat.$orange-palette,
       error: mat.$red-palette,
       warning: mat.$yellow-palette,
