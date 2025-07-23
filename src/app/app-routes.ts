@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
+import { List } from './pages/list/list';
+import { Details } from './pages/details/details';
 
 export const routes: Routes = [
   {
@@ -13,10 +15,10 @@ export const routes: Routes = [
   },
   {
     path: 'list',
-    loadComponent: () => import('./pages/list/list').then(m => m.List)
+    component: List
   },
   {
     path: 'details/:id',
-    loadComponent: () => import('./pages/details/details').then(m => m.Details)
+    component: Details
   }
 ];
