@@ -1,16 +1,19 @@
 .add-task-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 4px;
-  margin-bottom: 16px;
+  gap: 6px;
+  padding: 0;
+  margin-bottom: 6px;
+  box-shadow: var(--mat-sys-shadow);
+  max-height: 42dvh;
+  overflow: auto;
 }
 
 .add-task-content {
   form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 6px;
   }
 }
 

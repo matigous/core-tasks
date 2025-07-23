@@ -1,10 +1,21 @@
+:host {
+  --mat-checkbox-selected-icon-color: #02e600;
+
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
 .task-list-card {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+  max-height: 45dvh;
   padding: var(--card-padding);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  box-shadow: var(--card-shadow);
 }
 
 .add-task-card {

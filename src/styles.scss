@@ -4,18 +4,27 @@
       tertiary: mat.$orange-palette,
       error: mat.$red-palette,
       warning: mat.$yellow-palette,
-      success: mat.$green-palette ),
+      success: mat.$green-palette),
     typography: Roboto,
     density: 0,
   ));
 
 
 html {
+  color-scheme: light;
   background-color: var(--mat-sys-surface);
+  background: -webkit-linear-gradient(to bottom, #000000, #232526);
+  background: linear-gradient(to bottom, #000000, #232526);
+  background-repeat: round;
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   height: 100%;
-  color-scheme: light;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
 }
 
 .dark-theme {
